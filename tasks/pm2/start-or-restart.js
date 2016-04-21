@@ -21,7 +21,7 @@ module.exports = function (gruntOrShipit) {
       if (!pathIsAbsolute(shipit.config.pm2.json)) {
 
         //check if path absolute and update path to .json if not.
-        var jsonAbsPath = shipit.releasePath || shipit.currentPath;
+        var jsonAbsPath = shipit.currentPath || shipit.releasePath ;
 
         //if shipit.config.pm2.json is a shared file.
         if(shipit.config.shared && shipit.config.shared.files.indexOf(shipit.config.pm2.json) >= 0){
