@@ -31,7 +31,7 @@ module.exports = function (gruntOrShipit) {
         shipit.config.pm2.json = path.join(jsonAbsPath, shipit.config.pm2.json);
       }
       return shipit[method](
-		sprintf('cd %s && pm2 startOrRestart %s', shipit.currentPath, shipit.config.pm2.json)
+            sprintf('export PWD= %s ; cd %s && pm2 startOrRestart %s', shipit.currentPath, shipit.config.pm2.json)
       );
 
     }
